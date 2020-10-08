@@ -1,0 +1,40 @@
+.categories {
+  width: 100%;
+
+  .categories__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+
+    @media (max-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 425px) {
+      justify-content: space-evenly;
+    }
+
+    .categories__item {
+      padding: 15px 20px;
+      color: #000000;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $main-color;
+      }
+
+      @media (max-width: 525px) {
+        padding: 10px 15px;
+        font-size: 13px;
+      }
+    }
+
+    .categories__item--active {
+      color: #ffffff;
+    }
+  }
+}

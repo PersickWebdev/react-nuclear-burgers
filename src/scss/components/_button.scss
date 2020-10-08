@@ -1,0 +1,77 @@
+.button {
+  min-width: 80px;
+  padding: 10px 0;
+  border: 1px solid $main-color;
+  border-radius: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: $main-color;
+
+  @media (max-width: 768px) {
+    min-width: 70px;
+    padding: 7px 0;
+  }
+
+  @media (max-width: 525px) {
+    min-width: 60px;
+    padding: 5px 0;
+  }
+
+  @media (max-width: 425px) {
+    min-width: 50px;
+    padding: 5px 0;
+  }
+
+  &:hover {
+    background-color: #423400;
+    color: #cccccc;
+  }
+}
+
+.button--outline {
+  color: #000000;
+  background-color: rgba(204, 204, 204, 0.61);
+
+  &:hover {
+    color: #000000;
+    background-color: $main-color;
+  }
+}
+
+.button--cart_totalPrice {
+  transition: all 0.3s ease;
+
+  @media (max-width: 525px) {
+    font-size: 13px;
+  }
+}
+
+.button--cart_totalItems {
+  transition: all 0.3s ease;
+
+  @media (max-width: 525px) {
+    font-size: 13px;
+  }
+}
+
+.button--cartIcon {
+  width: 35px;
+  height: 35px;
+
+  @media (max-width: 525px) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (max-width: 425px) {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.button--buy {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

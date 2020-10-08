@@ -1,0 +1,20 @@
+@import './reset';
+@import './variables';
+@import './components/header';
+@import './components/button';
+@import './components/categories';
+@import './components/sortPopup';
+@import './components/home';
+@import './components/pizzaItem';
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.app__content {
+  background-image: url('../assets/images/background-02.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
