@@ -5,7 +5,7 @@
 @import 'components/all';
 
 body {
-  background-color: $background;
+  background-color: #cdb479;
 }
 
 .wrapper {
@@ -19,9 +19,14 @@ body {
 
 .content {
   padding: 40px 0;
+  background-image: url("../assets/images/background-02.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   &__title {
     margin: 35px 0;
+    color: $color-white;
   }
 
   &__items {

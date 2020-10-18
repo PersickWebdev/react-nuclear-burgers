@@ -3,6 +3,10 @@
 .header {
   border-bottom: 1px solid $gray-line;
   padding: 40px 0;
+  background-image: url("../../assets/images/background-01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   .container {
     display: flex;
@@ -15,10 +19,12 @@
 
     img {
       margin-right: 15px;
+      width: 40px;
+      height: 40px;
     }
 
     h1 {
-      color: #181818;
+      color: #ffb200;
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
@@ -26,7 +32,7 @@
     }
 
     p {
-      color: #7b7b7b;
+      color: #a57a1a;
     }
   }
 }

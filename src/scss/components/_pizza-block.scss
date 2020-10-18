@@ -2,8 +2,15 @@
 
 .pizza-block {
   width: 280px;
+  padding: 5px;
   text-align: center;
   margin-bottom: 65px;
+  border: 1px solid $orange;
+  border-radius: 5px;
+
+  &__title {
+    color: $orange;
+  }
 
   &:not(:nth-of-type(4n)) {
     margin-right: 35px;
@@ -68,5 +75,6 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+    color: $orange;
   }
 }

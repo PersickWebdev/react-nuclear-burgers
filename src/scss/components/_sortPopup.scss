@@ -3,6 +3,7 @@
 .sort {
   position: relative;
   font-family: Arial, sans-serif;
+  color: $color-white;
 
   @media (max-width: 425px) {
     width: 100%;
@@ -26,7 +27,6 @@
     & li {
       padding: 5px 5px;
       border-radius: 3px;
-      color: $color-black;
       cursor: pointer;
       transition: all 0.3s ease;
     }
