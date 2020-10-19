@@ -13,8 +13,9 @@ export const clearCart = () => {
     }
 };
 
-export const removeCartItem = () => {
+export const removeCartItem = (id) => {
     return {
-        type: REMOVE_CART_ITEM
+        type: REMOVE_CART_ITEM,
+        payload: id
     }
 };

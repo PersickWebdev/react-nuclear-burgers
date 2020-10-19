@@ -2,7 +2,7 @@ import React from "react";
 import { CartItem } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { clearCart } from "../redux/actionCreators/cart";
+import { clearCart, removeCartItem } from "../redux/actionCreators/cart";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,13 @@ const Cart = () => {
         if (window.confirm('Действительно очистить корзину?')) {
             dispatch(clearCart());
         }
-    }
+    };
+
+    const onRemoveItem = (id) => {
+        if (window.confirm('Удалить пиицу?')) {
+            dispatch(removeCartItem(id));
+        }
+    };
 
     return (
         <div className="container container--cart">
@@ -35,10 +41,12 @@ const Cart = () => {
                         <div className="content__items">
                             {addedPizzas.map(obj => (
                                 <CartItem name={obj.name}
+                                          id={obj.id}
                                           type={obj.type}
                                           size={obj.size}
                                           totalPrice={items[obj.id].totalPrice}
                                           totalCount={items[obj.id].items.length}
+                                          onRemove={onRemoveItem}
                                 />
                             ))}
                         </div>

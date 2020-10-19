@@ -1,4 +1,4 @@
-import {ADD_PIZZA_TO_CART, CLEAR_CART, SET_TOTAL_COUNT, SET_TOTAL_PRICE} from "../actionTypes/cart";
+import {ADD_PIZZA_TO_CART, CLEAR_CART, REMOVE_CART_ITEM, SET_TOTAL_COUNT, SET_TOTAL_PRICE} from "../actionTypes/cart";
 
 const initialState = {
     items: {},
@@ -41,6 +41,22 @@ const cartReducer = (state = initialState, action) => {
                 totalCount: 0,
             }
         }
+        case REMOVE_CART_ITEM : {
+            const newItems = {
+                ...state.items
+            }
+            const currentTotalPrice = newItems[action.payload].totalPrice;
+            const currentTotalCount = newItems[action.payload].items.length;
+            delete newItems[action.payload]
+
+            return {
+                ...state,
+                items: newItems,
+                totalPrice: state.totalPrice - currentTotalPrice,
+                totalCount: state.totalCount - currentTotalCount,
+            }
+        }
+
         default:
             return state;
     }
