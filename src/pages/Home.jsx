@@ -55,7 +55,7 @@ const Home = () => {
                         ? items.map(pizza => <PizzaItem onAddPizzaClick={handleAddPizzaToCart}
                                                         key={pizza.id}
                                                         {...pizza}
-                                                        addedCount={cartItems[pizza.id] && cartItems[pizza.id].length}/>)
+                                                        addedCount={cartItems[pizza.id] && cartItems[pizza.id].items.length}/>)
                         : <p>Loading ...</p>
                 }
             </div>
