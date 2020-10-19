@@ -1,13 +1,21 @@
 import React from "react";
 import { CartItem } from "../components";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {clearCart} from "../redux/actionCreators/cart";
 
 const Cart = () => {
+    const dispatch = useDispatch();
     const { items, totalPrice, totalCount } = useSelector(({ cart }) => cart);
 
     const addedPizzas = Object.keys(items).map(key => {
         return items[key].items[0];
     });
+
+    const onClearCart = () => {
+        if (window.confirm('Действительно очистить корзину?')) {
+            dispatch(clearCart());
+        }
+    }
 
     return (
         <div className="container container--cart">
@@ -17,7 +25,7 @@ const Cart = () => {
                         Корзина
                     </h2>
                     <div className="cart__clear">
-                        <span>Очистить корзину</span>
+                        <span onClick={onClearCart}>Очистить корзину</span>
                     </div>
                 </div>
                 <div className="content__items">

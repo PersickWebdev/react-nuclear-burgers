@@ -1,4 +1,4 @@
-import {ADD_PIZZA_TO_CART, SET_TOTAL_COUNT, SET_TOTAL_PRICE} from "../actionTypes/cart";
+import {ADD_PIZZA_TO_CART, CLEAR_CART, SET_TOTAL_COUNT, SET_TOTAL_PRICE} from "../actionTypes/cart";
 
 const initialState = {
     items: {},
@@ -33,7 +33,14 @@ const cartReducer = (state = initialState, action) => {
                 totalPrice
             }
         }
-
+        case CLEAR_CART : {
+            return {
+                ...state,
+                items: {},
+                totalPrice: 0,
+                totalCount: 0,
+            }
+        }
         default:
             return state;
     }
